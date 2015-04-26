@@ -1,0 +1,18 @@
+.listdemoBasicUsage md-divider {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.headert{
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+}
+
+.list{
+    font-family: "Segoe UI light",Helvetica,Arial,sans-serif;
+
+
+}
+
+md-button{
+    margin: 20px;
+}
