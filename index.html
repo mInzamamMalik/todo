@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Angulars Material CSS now available via Google CDN; version 0.8 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <link rel="stylesheet" href="./main.css"/>
+
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="main.js"></script>
+
+</head>
+<body ng-app="todo" ng-controller="todocontrol">
+
+
+<div layout="row" layout-wrap>
+    <div flex="40">
+        <md-subheader class="headert"> TO-DO manager</md-subheader>
+
+
+        <md-input-container >
+            <label>Your entry here</label>
+            <md-input width="50%" placeholder="write what todo?" md-maxlength="40" required="true" ng-model="entry"></md-input>
+
+
+        </md-input-container>
+        <span style="color: red">{{required}}</span>
+        <md-input-container>
+
+            <label>Date (optional)</label>
+            <md-input type="date" ng-model="date"></md-input>
+
+        </md-input-container>
+        <md-input-container>
+
+            <label>Time (optional)</label>
+            <md-input type="time" ng-model="time"></md-input>
+
+        </md-input-container>
+        <md-button ng-click="done();" class="md-raised md-primary">Done</md-button>
+
+
+    </div>
+    <div flex="10"></div>
+    <div flex="50">
+
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="item in data">
+
+                <div class="md-list-item-text">
+                    <h3 class="light">{{item.serial+1}}.&nbsp;&nbsp;  {{ item.entry }}</h3>
+                    <p>{{ item.date }} {{ item.time }}</p>
+
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
